@@ -115,30 +115,43 @@ const data = [
   Refresh the page to see the new article.
 */
 
+// const articleSection = querySelector('.articles')
+
 // const articleMaker = (article) => {
-//   const newDiv = createElement('div')
-//   newDiv.classList.add('article')
-//   const newH2 = createElement('h2')
-//   newH2.textContent = text
-//   const newP = createElement('p')
-//   newP.classList.add('date')
-//   newP.textContent = text
-//   const newP2 = createElement('p')
-//   newP2.classList.add('date')
-//   newP2.textContent = text
-//   const newP3 = createElement('p')
-//   newP3.classList.add('date')
-//   newP3.textContent = text
+//   const newArticle = document.createElement('div')
+//   newArticle.
 // }
+// data.forEach((articleInfo)=>{
+//   const article = 
+//   articleMaker(articleInfo)
+//   articleSection.appendChild(article)
+// })
 
-const articleSection = querySelector('.articles')
+const articles = document.querySelector('div.articles')
 
-const articleMaker = (article) => {
-  const newArticle = document.createElement('div')
-  newArticle.
+function articleMaker(article) {
+  const divArticle = document.createElement('div')
+  const titleArticle = docuement.createElement('h2')
+  const dateArticle = document.createElement('p')
+  const firstP = document.createElement('p')
+  const secondP = document.createElement('p')
+  const thirdP = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  divArticle.appendChild(titleArticle)
+  divArticle.appendChild(dateArticle)
+  divArticle.appendChild(firstP)
+  divArticle.appendChild(secondP)
+  divArticle.appendChild(thirdP)
+  divArticle.appendChild(expandButton)
+
+  divArticle.classList.add('article')
+  dateArticle.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+  titleArticle.textContent = title
+  dateArticle.textContent = date
+  firstP.textContent = firstParagraph
+  secondP.textContent = secondParagraph
+  thirdP.textContent = thirdParagraph
 }
-data.forEach((articleInfo)=>{
-  const article = 
-  articleMaker(articleInfo)
-  articleSection.appendChild(article)
-})

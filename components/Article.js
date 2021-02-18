@@ -127,41 +127,77 @@ const data = [
 //   articleSection.appendChild(article)
 // })
 
-const articles = document.querySelectorAll('.articles')
+// const articles = document.querySelectorAll('.articles')
 
-function articleMaker(article) {
-  console.log("articleMaker ", article)
-  const divArticle = document.createElement('div')
-  const titleArticle = document.createElement('h2')
-  const dateArticle = document.createElement('p')
-  const firstP = document.createElement('p')
-  const secondP = document.createElement('p')
-  const thirdP = document.createElement('p')
-  const expandButton = document.createElement('span')
+// function articleMaker(article) {
+//   console.log("articleMaker ", article)
+//   const divArticle = document.createElement('div')
+//   const titleArticle = document.createElement('h2')
+//   const dateArticle = document.createElement('p')
+//   const firstP = document.createElement('p')
+//   const secondP = document.createElement('p')
+//   const thirdP = document.createElement('p')
+//   const expandButton = document.createElement('span')
 
-  divArticle.appendChild(titleArticle)
-  divArticle.appendChild(dateArticle)
-  divArticle.appendChild(firstP)
-  divArticle.appendChild(secondP)
-  divArticle.appendChild(thirdP)
-  divArticle.appendChild(expandButton)
+//   divArticle.appendChild(titleArticle)
+//   divArticle.appendChild(dateArticle)
+//   divArticle.appendChild(firstP)
+//   divArticle.appendChild(secondP)
+//   divArticle.appendChild(thirdP)
+//   divArticle.appendChild(expandButton)
 
-  divArticle.classList.add('article')
-  dateArticle.classList.add('date')
-  expandButton.classList.add('expandButton')
+//   divArticle.classList.add('article')
+//   dateArticle.classList.add('date')
+//   expandButton.classList.add('expandButton')
 
-  titleArticle.textContent = article.title
-  dateArticle.textContent = article.date
-  firstP.textContent = article.firstParagraph
-  secondP.textContent = article.secondParagraph
-  thirdP.textContent = article.thirdParagraph
+//   titleArticle.textContent = article.title
+//   dateArticle.textContent = article.date
+//   firstP.textContent = article.firstParagraph
+//   secondP.textContent = article.secondParagraph
+//   thirdP.textContent = article.thirdParagraph
 
-  expandButton.addEventListener('click', () => {
-    div.article.classList.toggle('article-open')
-  })
+//   expandButton.addEventListener('click', () => {
+//     article.classList.toggle('article-open')
+//   })
 
-  return divArticle
+//   return divArticle
+// }
+
+function articleMaker(article){
+  //creating the conatainer div
+  const divArticle = document.createElement('div');
+  divArticle.classList.add("article");
+  //creating the h2 headline for titles
+  const h2Title = document.createElement('h2');
+  h2Title.textContent = `${article.title}`;
+  //creating the date paragraph
+  const datePar = document.createElement('p');
+  datePar.classList.add("date");
+  datePar.textContent = `${article.date}`;
+  //creating paragraph elements of the body
+  const firstP = document.createElement('p');
+  firstP.textContent = `${article.firstParagraph}`;
+  const secondP = document.createElement('p');
+  secondP.textContent = `${article.secondParagraph}`;
+  const thirdP = document.createElement('p');
+  thirdP.textContent = `${article.thirdParagraph}`;
+  //creating the expending span
+  const expandBtn = document.createElement('span');
+  expandBtn.classList.add("expandButton");
+  expandBtn.textContent = "Expand";
+  expandBtn.addEventListener('click', () => {
+    divArticle.classList.toggle("article-open");
+  });
+  //populate the divArticle
+  divArticle.appendChild(h2Title);
+  divArticle.appendChild(datePar);
+  divArticle.appendChild(firstP);
+  divArticle.appendChild(secondP);
+  divArticle.appendChild(thirdP);
+  divArticle.appendChild(expandBtn);
+  return divArticle;
 }
+const articles = document.querySelectorAll('.article');
 
 const body = document.querySelector('body');
 

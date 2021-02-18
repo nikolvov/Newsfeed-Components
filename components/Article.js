@@ -127,11 +127,12 @@ const data = [
 //   articleSection.appendChild(article)
 // })
 
-const articles = document.querySelector('div.articles')
+const articles = document.querySelector('articles')
 
 function articleMaker(article) {
+  console.log("articleMaker ", article)
   const divArticle = document.createElement('div')
-  const titleArticle = docuement.createElement('h2')
+  const titleArticle = document.createElement('h2')
   const dateArticle = document.createElement('p')
   const firstP = document.createElement('p')
   const secondP = document.createElement('p')
@@ -149,9 +150,37 @@ function articleMaker(article) {
   dateArticle.classList.add('date')
   expandButton.classList.add('expandButton')
 
-  titleArticle.textContent = title
-  dateArticle.textContent = date
-  firstP.textContent = firstParagraph
-  secondP.textContent = secondParagraph
-  thirdP.textContent = thirdParagraph
+  titleArticle.textContent = article.title
+  dateArticle.textContent = article.date
+  firstP.textContent = article.firstParagraph
+  secondP.textContent = article.secondParagraph
+  thirdP.textContent = article.thirdParagraph
+
+  expandButton.addEventListener('click', () => {
+    div.article.classList.toggle('article-open')
+  })
+
+  return divArticle
 }
+
+data.forEach((art) => {
+  const article = articleMaker(art)
+  articles.appendChild(article)
+})
+
+
+// steps to check forLoop
+
+// data.forEach((art) => {
+//   const article = articleMaker(art)
+//   articles.appendChild(article)
+// })
+
+// data.forEach((art) => {
+//   console.log(art)
+// })
+
+// data.forEach((art) => {
+//   const article = articleMaker(art)
+//   console.log(article)
+// })

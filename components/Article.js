@@ -127,7 +127,7 @@ const data = [
 //   articleSection.appendChild(article)
 // })
 
-const articles = document.querySelector('articles')
+const articles = document.querySelectorAll('.articles')
 
 function articleMaker(article) {
   console.log("articleMaker ", article)
@@ -163,10 +163,17 @@ function articleMaker(article) {
   return divArticle
 }
 
-data.forEach((art) => {
-  const article = articleMaker(art)
-  articles.appendChild(article)
-})
+const body = document.querySelector('body');
+
+data.push({
+  title: 'Article Add ',
+  date: 'December 31, 1993',
+  firstParagraph: 'Article is added',
+  secondParagraph: 'STuff stuff STUff stuufff',
+  thirdParagraph: 'stuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuffstuff stuff stuff stuff stuff stuff stuff stuff',
+});
+
+data.forEach(article => body.appendChild(articleMaker(article)));
 
 
 // steps to check forLoop
